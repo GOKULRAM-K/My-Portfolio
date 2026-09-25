@@ -19,8 +19,8 @@ const metrics = [
     detail: "Currently Under Legal Processing",
   },
   {
-    value: "8",
-    label: "Total Papers (2 Acc.)",
+    value: "9",
+    label: "Total Papers (3 Acc.)",
     detail: "Results in Eng, IEEE, Elsevier Array, RIACT",
   },
   {
