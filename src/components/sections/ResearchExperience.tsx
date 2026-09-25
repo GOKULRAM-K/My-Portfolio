@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Calendar, MapPin, Users, Award, Database, Cpu, CheckCircle2, ArrowUpRight, ShieldCheck, Sparkles } from "lucide-react";
+import { MapPin, CheckCircle2, ShieldCheck } from "lucide-react";
 import { researchExperiences, featuredProjects } from "@/data/portfolioData";
 
 export default function ResearchExperience() {
@@ -81,7 +81,7 @@ export default function ResearchExperience() {
 
         {/* Research Fellowships & Internships Timeline */}
         <div className="fellowships-section">
-          <h3 className="subheading-lg">Research Internships & Academic Programs</h3>
+          <h3 className="subheading-lg">Research Internships & Institutional Programs</h3>
 
           <div className="timeline-grid">
             {researchExperiences.map((exp) => (
@@ -97,12 +97,6 @@ export default function ResearchExperience() {
                       <MapPin size={13} /> {exp.location}
                     </div>
                   </div>
-
-                  {exp.logo && (
-                    <div className="exp-logo-box">
-                      <Image src={exp.logo} alt={exp.company} width={48} height={48} className="exp-logo-img" />
-                    </div>
-                  )}
                 </div>
 
                 <ul className="exp-bullet-list">
@@ -116,6 +110,23 @@ export default function ResearchExperience() {
                     <span className="tech-chip" key={t}>{t}</span>
                   ))}
                 </div>
+
+                {/* High-contrast institution logo cards with clear text labels */}
+                {exp.logos && exp.logos.length > 0 && (
+                  <div className="exp-card-footer-logos">
+                    <span className="exp-logo-label">Institutional Program Affiliations:</span>
+                    <div className="exp-logos-row">
+                      {exp.logos.map((l, i) => (
+                        <div className="exp-partner-badge-card" key={i}>
+                          <div className="exp-partner-logo-box">
+                            <Image src={l.path} alt={l.name} width={40} height={40} className="exp-partner-logo-img" />
+                          </div>
+                          <span className="exp-partner-name">{l.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>

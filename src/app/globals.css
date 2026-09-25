@@ -233,7 +233,7 @@ button {
   height: 38px;
   place-items: center;
   border: 1px solid var(--accent-border);
-  border-radius: 9px;
+  border-radius: 999px;
   background: radial-gradient(circle, rgba(0, 229, 255, 0.15), rgba(59, 156, 255, 0.08));
   color: var(--accent-cyan);
   font-family: var(--font-mono);
@@ -424,7 +424,7 @@ button {
 
 .stat-val {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: var(--accent-cyan);
 }
@@ -435,7 +435,7 @@ button {
   margin-top: 4px;
 }
 
-/* Profile Photo Container & Floating Badges */
+/* Profile Photo Container & Clean Highlight Pills */
 .hero-profile-container {
   display: flex;
   justify-content: center;
@@ -445,16 +445,19 @@ button {
 .profile-card-wrapper {
   position: relative;
   width: min(380px, 90vw);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .profile-glow-effect {
   position: absolute;
   inset: -10px;
   border-radius: 24px;
-  background: linear-gradient(135deg, rgba(0, 229, 255, 0.3), rgba(59, 156, 255, 0.2), rgba(168, 85, 247, 0.2));
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.25), rgba(59, 156, 255, 0.15), rgba(168, 85, 247, 0.15));
   filter: blur(25px);
   z-index: 0;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .profile-card-inner {
@@ -531,42 +534,34 @@ button {
   backdrop-filter: blur(4px);
 }
 
-/* Floating Badges */
-.floating-badge {
-  position: absolute;
-  z-index: 3;
+/* Clean highlight pills placed neatly below the photo */
+.profile-highlight-pills {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.highlight-pill {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 10px 14px;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid var(--border-strong);
-  background: rgba(13, 23, 38, 0.92);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-  font-size: 0.75rem;
-  white-space: nowrap;
-  transition: transform 200ms ease;
-}
-
-.floating-badge:hover {
-  transform: translateY(-3px);
-}
-
-.floating-badge strong {
-  display: block;
+  background: var(--surface);
   font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--foreground-secondary);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.highlight-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-border);
   color: var(--foreground);
 }
-
-.floating-badge span {
-  font-size: 0.68rem;
-  color: var(--foreground-muted);
-}
-
-.badge-top-right { top: 15px; right: -25px; }
-.badge-bottom-left { bottom: 30px; left: -30px; }
-.badge-top-left { top: 60px; left: -35px; }
 
 .text-accent { color: var(--accent-bright); }
 .text-amber { color: var(--accent-amber); }
@@ -581,10 +576,6 @@ button {
 
   .hero-profile-container {
     order: -1;
-  }
-
-  .floating-badge {
-    display: none;
   }
 
   .hero-quick-stats {
@@ -694,7 +685,7 @@ button {
 }
 
 /* ─────────────────────────────────────────
-   Publications Section
+   Publications Section & Impact Factors
 ───────────────────────────────────────── */
 
 .publication-controls {
@@ -845,22 +836,83 @@ button {
   color: var(--foreground);
 }
 
+.pub-venue-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
 .pub-venue {
   font-size: 0.88rem;
   color: var(--accent-bright);
-  margin-bottom: 8px;
+}
+
+.pub-impact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff7b00, #ffb703);
+  color: #0d1117;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: 0 0 14px rgba(255, 123, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.pub-supervision-note {
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+  margin-bottom: 10px;
+}
+
+.pub-collaboration-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
 .pub-collaboration {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 6px;
   background: rgba(59, 156, 255, 0.08);
+  border: 1px solid var(--accent-soft);
   color: var(--accent-cyan);
-  font-size: 0.78rem;
-  margin-bottom: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.pub-partner-logos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pub-partner-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pub-partner-logo-img {
+  object-fit: contain;
+  max-height: 32px;
+  width: auto;
 }
 
 .pub-description {
@@ -1089,8 +1141,9 @@ button {
 
 .upcoming-badge.capstone { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
 .upcoming-badge.dataset { background: rgba(0, 229, 255, 0.15); color: var(--accent-cyan); border: 1px solid rgba(0, 229, 255, 0.3); }
+.upcoming-badge.prep { background: rgba(59, 156, 255, 0.15); color: var(--accent-bright); border: 1px solid rgba(59, 156, 255, 0.3); }
 .upcoming-badge.legal { background: rgba(255, 183, 3, 0.15); color: var(--accent-amber); border: 1px solid rgba(255, 183, 3, 0.3); }
-.upcoming-badge.review { background: rgba(59, 156, 255, 0.15); color: var(--accent-bright); border: 1px solid rgba(59, 156, 255, 0.3); }
+.upcoming-badge.review { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
 
 .upcoming-time {
   font-family: var(--font-mono);
@@ -1178,7 +1231,7 @@ button {
 }
 
 /* ─────────────────────────────────────────
-   Research Experience & Lead Projects
+   Research Experience & Institutional Badges
 ───────────────────────────────────────── */
 
 .research-leadership-grid {
@@ -1221,7 +1274,6 @@ button {
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 800;
-
 }
 
 .proj-org {
@@ -1316,7 +1368,7 @@ button {
   color: var(--foreground-muted);
 }
 
-/* Fellowships Grid */
+/* Fellowships Grid & High-Contrast Partner Logo Cards */
 .timeline-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1324,15 +1376,15 @@ button {
 }
 
 .timeline-card {
-  padding: 26px;
+  padding: 28px;
   border-radius: 14px;
   border: 1px solid var(--border);
   background: var(--surface);
+  display: flex;
+  flex-direction: column;
 }
 
 .timeline-card-header {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 16px;
 }
 
@@ -1344,12 +1396,12 @@ button {
 
 .exp-role {
   margin: 4px 0 2px;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
 }
 
 .exp-company {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--accent-bright);
 }
 
@@ -1359,24 +1411,7 @@ button {
   gap: 4px;
   font-size: 0.75rem;
   color: var(--foreground-muted);
-  margin-top: 2px;
-}
-
-.exp-logo-box {
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  background: #ffffff;
-  padding: 4px;
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-}
-
-.exp-logo-img {
-  object-fit: contain;
-  width: 100%;
-  height: 100%;
+  margin-top: 4px;
 }
 
 .exp-bullet-list {
@@ -1385,6 +1420,7 @@ button {
   color: var(--foreground-secondary);
   font-size: 0.85rem;
   line-height: 1.65;
+  flex-grow: 1;
 }
 
 .exp-bullet-list li {
@@ -1395,6 +1431,74 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  margin-bottom: 18px;
+}
+
+/* High-contrast institution cards with clear legible text near logos */
+.exp-card-footer-logos {
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.exp-logo-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent-cyan);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.exp-logos-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.exp-partner-badge-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(15, 23, 42, 0.98));
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.exp-partner-badge-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.8);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.25);
+}
+
+.exp-partner-logo-box {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 4px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.exp-partner-logo-img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.exp-partner-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 @media (max-width: 960px) {
@@ -1457,21 +1561,28 @@ button {
   font-weight: 600;
 }
 
+.ind-logos-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .ind-logo-box {
-  width: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 54px;
+  padding: 6px 14px;
   border-radius: 10px;
   background: #ffffff;
-  padding: 6px;
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .ind-logo-img {
   object-fit: contain;
-  width: 100%;
-  height: 100%;
+  max-height: 42px;
+  width: auto;
 }
 
 .ind-highlights-list {
@@ -1809,7 +1920,7 @@ button {
 
 .metric-value {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: var(--accent-cyan);
 }

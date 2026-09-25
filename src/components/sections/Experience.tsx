@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Briefcase, MapPin, Calendar, CheckCircle2, Building2, Code2 } from "lucide-react";
+import { MapPin, Building2 } from "lucide-react";
 import { industryExperiences } from "@/data/portfolioData";
 
 export default function Experience() {
@@ -40,9 +40,13 @@ export default function Experience() {
                   </div>
                 </div>
 
-                {item.logo && (
-                  <div className="ind-logo-box">
-                    <Image src={item.logo} alt={item.company} width={54} height={54} className="ind-logo-img" />
+                {item.logos && item.logos.length > 0 && (
+                  <div className="ind-logos-group">
+                    {item.logos.map((logo, idx) => (
+                      <div className="ind-logo-box" key={idx} title={logo.name}>
+                        <Image src={logo.path} alt={logo.name} width={54} height={54} className="ind-logo-img" />
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>

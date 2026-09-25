@@ -44,25 +44,29 @@ export const personalInfo: PersonalInfo = {
     orcid: "https://orcid.org/my-orcid?orcid=0009-0008-7632-1675",
     email: "mailto:gokulram.k2023@vitchennai.ac.in",
   },
-  resumePdf: "/Gokul Ram Kannan (Resume).pdf",
-  profilePhoto: "/images/Profile.png",
+  resumePdf: "/assets/docs/Gokul Ram Kannan (Resume).pdf",
+  profilePhoto: "/assets/images/profile/Profile.png",
 };
 
 export interface Publication {
   id: string;
   title: string;
-  status: "PUBLISHED" | "ACCEPTED" | "SUBMITTED" | "IN_DEVELOPMENT";
+  status: "PUBLISHED" | "ACCEPTED" | "UNDER_REVIEW" | "IN_DEVELOPMENT";
   type: "Journal" | "Conference" | "Book Chapter" | "Manuscript";
   year: string;
   venue: string;
   publisher?: string;
+  impactFactor?: string;
   citations?: number;
   link?: string;
   citationsLink?: string;
   area: string;
   description: string;
   collaboration?: string;
+  collabLogos?: { name: string; path: string }[];
   highlights?: string[];
+  supervision?: string;
+  isCapstone?: boolean;
 }
 
 export const publications: Publication[] = [
@@ -75,12 +79,13 @@ export const publications: Publication[] = [
     year: "2024",
     venue: "Results in Engineering",
     publisher: "Elsevier / ScienceDirect",
+    impactFactor: "9.4",
     citations: 25,
     link: "https://www.sciencedirect.com/science/article/pii/S2590123024016876",
     citationsLink: "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=15598493744748835136&as_sdt=5",
     area: "Bioinformatics · Deep Learning · XAI · NLP",
     description: "An ensemble deep-learning architecture for protein secondary structure prediction incorporating NLP-inspired sequence metrics and gradient-based explainable AI.",
-    highlights: ["25+ Google Scholar Citations", "Elsevier Q1/Q2 Journal", "NLP Metrics Integration"],
+    highlights: ["IF: 9.4 (Elsevier)", "25+ Google Scholar Citations", "NLP Metrics Integration"],
   },
   {
     id: "pub-02",
@@ -152,7 +157,7 @@ export const publications: Publication[] = [
     highlights: ["IEEE Xplore Indexed", "Cloud Systems Optimization"],
   },
 
-  // Accepted Papers (2)
+  // Accepted Papers (3)
   {
     id: "pub-07",
     title: "An explainable multimodal data fusion framework for compatibility reasoning in heterogeneous decision systems",
@@ -161,10 +166,11 @@ export const publications: Publication[] = [
     year: "2026",
     venue: "Array (Accepted Sept 18, 2026)",
     publisher: "Elsevier",
+    impactFactor: "5.3",
     area: "Multimodal Learning · Data Fusion · Heterogeneous Reasoning · XAI",
     description: "A framework for compatibility reasoning across non-homogeneous decision modalities, introducing derived feature spaces and interpretable score decomposition.",
     collaboration: "International Collaboration with Prof. Abdulkareem Sh. Mahdi Al-Obaidi (Taylor's University, Malaysia)",
-    highlights: ["Elsevier Journal", "International Collaboration (Malaysia)", "Accepted Sept 2026"],
+    highlights: ["IF: 5.3 (Elsevier)", "International Collaboration (Malaysia)", "Accepted Sept 2026"],
   },
   {
     id: "pub-08",
@@ -173,70 +179,76 @@ export const publications: Publication[] = [
     type: "Conference",
     year: "2026",
     venue: "5th International Conference on Robotics, Intelligent Automation, and Control Technologies (RIACT 2026)",
-    publisher: "In collaboration with Teesside University & Hochschule Bochum",
+    publisher: "Partnered with Teesside University (UK) & Hochschule Bochum (Germany)",
     area: "Speech Emotion Recognition · Domain Generalization · 1D-CNN",
     description: "Harmonizes 48,648 augmented samples across RAVDESS, CREMA-D, TESS, and SAVEE with a 7.19M-parameter 1D-CNN achieving 98.03% accuracy and +5.05 pp transfer learning boost.",
-    collaboration: "Teesside University (UK) & Hochschule Bochum (Germany)",
-    highlights: ["RIACT 2026 Accepted", "UK & Germany Institutional Collaboration", "98.03% Accuracy"],
+    collaboration: "Partnered Conference with Teesside University (UK) & Hochschule Bochum (Germany)",
+    collabLogos: [
+      { name: "Teesside University (UK)", path: "/assets/images/logos/Teesside-University-logo.jpg" },
+      { name: "Hochschule Bochum (Germany)", path: "/assets/images/logos/hochschule-bochum-logo.png" },
+    ],
+    highlights: ["RIACT 2026 Accepted", "Teesside Univ (UK) & Hochschule Bochum Partnered", "98.03% Accuracy"],
+  },
+  {
+    id: "pub-12",
+    title: "An Explainable Machine Learning Approach to Keystroke-Based User Identification",
+    status: "ACCEPTED",
+    type: "Conference",
+    year: "2026",
+    venue: "IEEE Conference (Accepted Sept 2026)",
+    publisher: "IEEE",
+    area: "Biometrics · Keystroke Dynamics · Cybersecurity · XAI",
+    description: "Analyzes typing cadences and temporal dwell/flight times for non-intrusive continuous user authentication supported by feature importance explanations.",
+    highlights: ["Accepted at IEEE Conference", "Behavioral Biometrics & Security", "Accepted Sept 2026"],
   },
 
-  // Submitted Papers (4)
+  // Under Review Papers (3)
   {
     id: "pub-09",
     title: "RandFusion: A Machine Learning Framework for Cryptographic Token Randomness Evaluation",
-    status: "SUBMITTED",
+    status: "UNDER_REVIEW",
     type: "Conference",
     year: "2026",
     venue: "IEEE Conference (Under Peer Review)",
     area: "Applied ML · Cryptography · Randomness Verification",
     description: "Proposes an ML-based statistical randomness testing pipeline for evaluating entropy, bit-distribution, and cryptographic token predictability.",
-    highlights: ["Submitted to IEEE", "Cryptographic Machine Learning"],
+    highlights: ["Under Peer Review @ IEEE", "Cryptographic Machine Learning"],
   },
   {
     id: "pub-10",
     title: "Optimized Autonomous Lunar Landing with Experience Replay and Target Networks",
-    status: "SUBMITTED",
+    status: "UNDER_REVIEW",
     type: "Journal",
     year: "2026",
     venue: "Scientific Reports (Nature Publishing Group - Under Review)",
     area: "Deep Reinforcement Learning · Autonomous Systems · Aerospace Control",
     description: "Reinforcement learning framework for continuous-space autonomous lunar touchdown optimization using stabilized target networks and dynamic experience prioritization.",
-    highlights: ["Submitted to Nature Scientific Reports", "Deep Reinforcement Learning"],
+    highlights: ["Under Peer Review @ Nature Scientific Reports", "Deep Reinforcement Learning"],
   },
   {
     id: "pub-11",
     title: "A Hybrid LSTM–Random Forest Framework for Intelligent Stock Market Prediction with Adaptive Pricing",
-    status: "SUBMITTED",
+    status: "UNDER_REVIEW",
     type: "Book Chapter",
     year: "2026",
     venue: "IGI Global Book Chapter (Under Review)",
     area: "Financial AI · Hybrid Ensembles · Time-Series Forecasting",
     description: "Combines temporal sequence representations from LSTMs with non-linear tree splits from Random Forests for resilient multi-horizon financial indicator prediction.",
-    highlights: ["Submitted to IGI Global", "Hybrid Sequence-Tree Ensembles"],
-  },
-  {
-    id: "pub-12",
-    title: "An Explainable Machine Learning Approach to Keystroke-Based User Identification",
-    status: "SUBMITTED",
-    type: "Conference",
-    year: "2026",
-    venue: "IEEE Conference (Under Peer Review)",
-    area: "Biometrics · Keystroke Dynamics · Cybersecurity · XAI",
-    description: "Analyzes typing cadences and temporal dwell/flight times for non-intrusive continuous user authentication supported by feature importance explanations.",
-    highlights: ["Submitted to IEEE", "Behavioral Biometrics & Security"],
+    highlights: ["Under Peer Review @ IGI Global", "Hybrid Sequence-Tree Ensembles"],
   },
 
-  // In-Development / Drafting / Capstone Papers (3)
+  // In-Development / Drafting Manuscripts (3)
   {
     id: "pub-13",
     title: "FBFRCSF: An Efficient Sequence Clustering Algorithm for Microbial Pattern Finding",
     status: "IN_DEVELOPMENT",
     type: "Manuscript",
     year: "2026",
-    venue: "Potential Target: Bioinformatics Journal (Drafting Stage)",
+    venue: "Manuscript in Preparation",
+    supervision: "Supervised by Dr. Parvathi R (Centre for Advanced Data Science, VIT Chennai) & Dr. Vignesh U (SCOPE, VIT Chennai)",
     area: "Computational Biology · Microbial Pattern Clustering · Sequence Mining",
     description: "Algorithmic framework designed for fast pattern discovery and cluster isolation across massive microbial genomic sequence repositories.",
-    highlights: ["Drafting Stage", "Genomic Pattern Discovery"],
+    highlights: ["Drafting Stage", "Supervised by Dr. Parvathi R & Dr. Vignesh U"],
   },
   {
     id: "pub-14",
@@ -244,10 +256,11 @@ export const publications: Publication[] = [
     status: "IN_DEVELOPMENT",
     type: "Manuscript",
     year: "2026",
-    venue: "In Collaboration with Centre for Neuroinformatics (CNI), VIT Chennai",
+    venue: "Manuscript in Preparation",
+    supervision: "Under guidance of Dr. Sridevi S (Centre for Neuroinformatics, VIT Chennai)",
     area: "Neuroinformatics · Physiological Signal Processing · Grammatical Learning",
     description: "Converts multimodal ECG and EDA streams into a 5-state symbolic vocabulary via GMM/BIC to induce formal cognitive grammars via BiGRU sequence models.",
-    highlights: ["CNI Research Project", "Symbolic Physiological Grammars"],
+    highlights: ["CNI Research Project", "Guided by Dr. Sridevi S"],
   },
   {
     id: "pub-15",
@@ -255,10 +268,12 @@ export const publications: Publication[] = [
     status: "IN_DEVELOPMENT",
     type: "Manuscript",
     year: "2026",
-    venue: "B.Tech Capstone Project (Supervised by Dr. Vignesh U, SCOPE, VIT Chennai)",
+    venue: "B.Tech Capstone Project",
+    supervision: "Supervised by Dr. Vignesh U (Associate Professor, SCOPE, VIT Chennai)",
+    isCapstone: true,
     area: "Disentangled Representation Learning · Speech Emotion Recognition · VAEs",
     description: "Hierarchical neural architecture decoupling emotion features from speaker traits and acoustic background noise using orthogonal latent spaces and adversarial gradient reversal.",
-    highlights: ["Capstone Research", "Supervised by Dr. Vignesh U", "Latent Disentanglement"],
+    highlights: ["B.Tech Capstone Project", "Supervised by Dr. Vignesh U", "Latent Disentanglement"],
   },
 ];
 
@@ -373,7 +388,7 @@ export interface InternshipExperience {
   location: string;
   period: string;
   category: "INDUSTRY" | "RESEARCH";
-  logo?: string;
+  logos?: { name: string; path: string }[];
   highlights: string[];
   techStack: string[];
 }
@@ -386,7 +401,9 @@ export const industryExperiences: InternshipExperience[] = [
     location: "Chennai, TN (On-site)",
     period: "May 2026 – Present",
     category: "INDUSTRY",
-    logo: "/images/perartral_logo.png",
+    logos: [
+      { name: "Perartral Technologies", path: "/assets/images/logos/perartral_company_logo.jpg" }
+    ],
     highlights: [
       "Engineered a Computer Vision + Multimodal LLM architectural floor-plan pipeline using EasyOCR, OpenCV, YOLO, Hough Transform, and Gemini to extract structural geometry into a validated Building Semantic Model supporting 8 engineering-agent contexts.",
       "Built the HVAC intelligence layer by modeling thermal zones, walls, geometry, and airflow topology, transforming raw floor plans into structured context for AI reasoning.",
@@ -402,7 +419,9 @@ export const industryExperiences: InternshipExperience[] = [
     location: "Chennai, TN (On-site)",
     period: "Jun 2025 – Jul 2025",
     category: "INDUSTRY",
-    logo: "/images/krg_technologies_logo.jpg",
+    logos: [
+      { name: "KRG Technologies", path: "/assets/images/logos/krg_technologies_logo.jpg" }
+    ],
     highlights: [
       "Engineered an AI resume-intelligence pipeline validated on 2,000+ resumes across 7+ formats, achieving 95–99% core-field extraction accuracy and 95%+ OCR precision.",
       "Architected 25-field LLM extraction using Gemini, strict JSON/schema validation, entity normalization, and Flask microservices, integrating Mammoth, Anti-Word, and Affinda for 50 ms – 1 s document parsing.",
@@ -417,7 +436,9 @@ export const industryExperiences: InternshipExperience[] = [
     location: "Chennai, TN (Hybrid)",
     period: "May 2025 – Aug 2025 (4 mos)",
     category: "INDUSTRY",
-    logo: "/images/medxai_logo.jpg",
+    logos: [
+      { name: "MEDxAI Innovations", path: "/assets/images/logos/medxai_logo.jpg" }
+    ],
     highlights: [
       "Engineered an end-to-end pharmacogenomics AI/ML pipeline integrating PharmGKB clinical annotations, variant–drug associations, phenotype records, drug labels, and CPIC guidelines to analyze gene–variant–drug interactions.",
       "Developed a hybrid pharmacogenomic decision framework combining evidence-based knowledge retrieval with ML inference for both annotated and novel variant interactions.",
@@ -436,7 +457,11 @@ export const researchExperiences: InternshipExperience[] = [
     location: "CNI – QNeuro – SUNY Binghamton Program",
     period: "May 2026 – Jul 2026",
     category: "RESEARCH",
-    logo: "/images/qneuro_logo.jpg",
+    logos: [
+      { name: "SUNY Binghamton", path: "/assets/images/logos/binghamon-university-logo.png" },
+      { name: "VIT Chennai", path: "/assets/images/logos/vitchennai_logo.jpg" },
+      { name: "QNeuro", path: "/assets/images/logos/qneuro_logo.jpg" },
+    ],
     highlights: [
       "Developed a Cognitive Grammar Learning Framework converting multimodal ECG + EDA physiological signals into a 5-state symbolic vocabulary via GMM/BIC, modeling temporal transitions with a BiGRU across 637 synchronized 10-second windows and 629 validated samples.",
       "Engineered signal normalization, latent-state discovery, grammar induction, and sequence-learning pipelines, evaluating 34 participants via Leave-One-Subject-Out (LOSO) and cross-dataset transfer.",
@@ -448,10 +473,12 @@ export const researchExperiences: InternshipExperience[] = [
     id: "res-02",
     role: "Research Intern",
     company: "School of Computer Science & Engineering (SCOPE), VIT Chennai",
-    location: "In Collaboration with Teesside Univ (UK) & Hochschule Bochum (Germany)",
+    location: "SCOPE, VIT Chennai",
     period: "May 2025 – Jul 2025",
     category: "RESEARCH",
-    logo: "/images/vitchennai_logo.jpg",
+    logos: [
+      { name: "VIT Chennai", path: "/assets/images/logos/vitchennai_logo.jpg" },
+    ],
     highlights: [
       "Developed a multi-corpus Speech Emotion Recognition framework harmonizing utterances across RAVDESS, CREMA-D, TESS, and SAVEE, expanding training to 48,648 samples via noise and pitch augmentation.",
       "Engineered a lightweight 1D-CNN with 7.19M parameters over MFCC, ZCR, and RMSE feature spaces, achieving 98.03% accuracy / 0.980 Macro-F1 with Leave-One-Dataset-Out (LODO) transfer evaluation.",
@@ -537,7 +564,7 @@ export const featuredProjects: ProjectHighlight[] = [
       "Contributed to production LLM, RAG, and AI agent systems implementing AI orchestration, structured output validation, persistence, and SSE endpoints.",
       "Hardened backend APIs through auth, rate limiting, concurrency control, cache consistency, and unified error handling across server actions.",
     ],
-    badge: "/images/gssoc-badge-gssoc_champion.png",
+    badge: "/assets/images/badges/gssoc-badge-gssoc_champion.png",
   },
 ];
 
@@ -558,12 +585,12 @@ export const educationList: Education[] = [
     period: "2023 — 2027",
     grade: "CGPA: 8.80 / 10.0",
     location: "Chennai, Tamil Nadu, India",
-    logo: "/images/vitchennai_logo.jpg",
+    logo: "/assets/images/logos/vitchennai_logo.jpg",
     highlights: [
       "3+ years of active undergraduate research starting from Year 1.",
       "Collaborated with 9 professors, 4 seniors, and 3 batchmates across domestic & international projects.",
       "5 Published Indian Patents + 3 Patents under Legal Processing.",
-      "6 Published Papers + 2 Accepted Papers + 4 Submitted Papers + 3 In-Development Manuscripts.",
+      "6 Published Papers + 3 Accepted Papers + 3 Under Review Papers + 3 In-Development Manuscripts.",
       "Funded Field Project Lead (14 members) & SIH 2025 National Hardware Finalist (Top 30 Teams).",
     ],
   },

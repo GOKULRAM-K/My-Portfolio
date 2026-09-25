@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles, Clock, Database, Layers, ShieldCheck, ArrowUpRight, Cpu, BookOpen, Compass } from "lucide-react";
+import { Sparkles, Clock, Database, ShieldCheck, ArrowUpRight, CheckCircle2, BookOpen, Layers } from "lucide-react";
 
 export default function UpcomingWork() {
   return (
@@ -17,15 +17,15 @@ export default function UpcomingWork() {
           </div>
 
           <p>
-            Current ongoing capstone research, institutional biosignal dataset construction, intellectual property filings under legal processing, and active paper submissions currently undergoing peer review.
+            Current ongoing Capstone research, institutional biosignal dataset construction, active manuscripts in preparation, legal processing patents, and peer-reviewed journal & conference submissions.
           </p>
         </div>
 
         <div className="upcoming-grid">
-          {/* Capstone Work */}
+          {/* Capstone Work (HEDER-Net ONLY) */}
           <div className="upcoming-card featured">
             <div className="upcoming-card-header">
-              <span className="upcoming-badge capstone"><Sparkles size={13} /> Capstone Research</span>
+              <span className="upcoming-badge capstone"><Sparkles size={13} /> B.Tech Capstone Project</span>
               <span className="upcoming-time">2026 — Present</span>
             </div>
 
@@ -49,7 +49,7 @@ export default function UpcomingWork() {
             </div>
           </div>
 
-          {/* Dataset Building */}
+          {/* Institutional Dataset Initiative */}
           <div className="upcoming-card dataset">
             <div className="upcoming-card-header">
               <span className="upcoming-badge dataset"><Database size={13} /> Institutional Dataset Initiative</span>
@@ -61,7 +61,7 @@ export default function UpcomingWork() {
             </h3>
 
             <div className="upcoming-advisor">
-              <strong>Lead Collaboration:</strong> Dr. Sridevi S (Associate Professor, Centre for Neuroinformatics, VIT Chennai)
+              <strong>Under guidance of:</strong> Dr. Sridevi S (Associate Professor, Centre for Neuroinformatics, VIT Chennai)
             </div>
 
             <p className="upcoming-description">
@@ -76,58 +76,50 @@ export default function UpcomingWork() {
             </div>
           </div>
 
-          {/* Legal Processing Patents */}
-          <div className="upcoming-card patents-pending">
+          {/* Active Manuscripts in Preparation */}
+          <div className="upcoming-card prep-manuscripts">
             <div className="upcoming-card-header">
-              <span className="upcoming-badge legal"><ShieldCheck size={13} /> 3 Patents Under Legal Processing</span>
-              <span className="upcoming-time">Submitted 2026</span>
+              <span className="upcoming-badge prep"><Layers size={13} /> Manuscripts in Preparation</span>
+              <span className="upcoming-time">2026</span>
             </div>
 
             <ul className="pending-list">
               <li>
-                <strong>AI-IoT Railway Track Fault Detection & Localization</strong>
-                <span>Worked since Sep 2025 · Submitted July 2026</span>
+                <strong>FBFRCSF: Sequence Clustering for Microbial Pattern Finding</strong>
+                <span className="text-cyan">Supervised by Dr. Parvathi R (Centre for Advanced Data Science) & Dr. Vignesh U (SCOPE)</span>
               </li>
               <li>
-                <strong>Smart Grid Dynamic Phase Balancing (SIH 2025 Hardware Prototype)</strong>
-                <span>Worked since Feb 2026 · Submitted July 2026</span>
-              </li>
-              <li>
-                <strong>Portable Spectacle Medication Reminder & Storage Device</strong>
-                <span>Worked since Mar 2026 · Submitted September 2026</span>
+                <strong>Cognitive Grammar Learning for Workload Assessment</strong>
+                <span className="text-cyan">Under guidance of Dr. Sridevi S (Centre for Neuroinformatics, VIT Chennai)</span>
               </li>
             </ul>
 
             <div className="pending-footer">
-              <a href="#patents" className="link-arrow">
-                View all patent details <ArrowUpRight size={14} />
+              <a href="#publications" className="link-arrow">
+                View all paper details <ArrowUpRight size={14} />
               </a>
             </div>
           </div>
 
-          {/* Submitted Papers Pipeline */}
+          {/* Under Review Papers */}
           <div className="upcoming-card submitted-papers">
             <div className="upcoming-card-header">
-              <span className="upcoming-badge review"><Clock size={13} /> 4 Submitted Papers (Under Review)</span>
+              <span className="upcoming-badge review"><Clock size={13} /> 3 Manuscripts Under Review</span>
               <span className="upcoming-time">2026</span>
             </div>
 
             <ul className="pending-list">
               <li>
                 <strong>RandFusion: Cryptographic Token Randomness Evaluation</strong>
-                <span>Submitted at IEEE Conference</span>
+                <span>Under Review @ IEEE Conference</span>
               </li>
               <li>
                 <strong>Autonomous Lunar Landing with Target Networks</strong>
-                <span>Submitted at Scientific Reports (Nature Publishing Group)</span>
+                <span>Under Review @ Scientific Reports (Nature Publishing Group)</span>
               </li>
               <li>
                 <strong>Hybrid LSTM-Random Forest Stock Market Prediction</strong>
-                <span>Submitted for IGI Global Book Chapter</span>
-              </li>
-              <li>
-                <strong>Keystroke Dynamics User Identification via XAI</strong>
-                <span>Submitted at IEEE Conference</span>
+                <span>Under Review @ IGI Global Book Chapter</span>
               </li>
             </ul>
 

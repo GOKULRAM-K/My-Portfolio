@@ -1,16 +1,17 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ArrowUpRight, FileText, Globe, Star, Sparkles, Filter, BookmarkCheck, Clock, Layers } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, FileText, Globe, Star, Sparkles, Filter, BookmarkCheck, Clock, Layers, Flame } from "lucide-react";
 import { publications, type Publication } from "@/data/portfolioData";
 
-type StatusFilter = "ALL" | "PUBLISHED" | "ACCEPTED" | "SUBMITTED" | "IN_DEVELOPMENT";
+type StatusFilter = "ALL" | "PUBLISHED" | "ACCEPTED" | "UNDER_REVIEW" | "IN_DEVELOPMENT";
 
 const filterOptions: { label: string; value: StatusFilter; count: number }[] = [
   { label: "All Papers", value: "ALL", count: 15 },
   { label: "Published", value: "PUBLISHED", count: 6 },
-  { label: "Accepted", value: "ACCEPTED", count: 2 },
-  { label: "Submitted", value: "SUBMITTED", count: 4 },
+  { label: "Accepted", value: "ACCEPTED", count: 3 },
+  { label: "Under Review", value: "UNDER_REVIEW", count: 3 },
   { label: "In Pipeline / Draft", value: "IN_DEVELOPMENT", count: 3 },
 ];
 
@@ -37,10 +38,10 @@ export default function Publications() {
         return <span className="status-badge published"><BookmarkCheck size={13} /> Published</span>;
       case "ACCEPTED":
         return <span className="status-badge accepted"><Sparkles size={13} /> Accepted</span>;
-      case "SUBMITTED":
-        return <span className="status-badge submitted"><Clock size={13} /> Submitted</span>;
+      case "UNDER_REVIEW":
+        return <span className="status-badge submitted"><Clock size={13} /> Under Review</span>;
       case "IN_DEVELOPMENT":
-        return <span className="status-badge draft"><Layers size={13} /> In Preparation / Capstone</span>;
+        return <span className="status-badge draft"><Layers size={13} /> Manuscript in Prep</span>;
     }
   };
 
@@ -58,7 +59,7 @@ export default function Publications() {
           </div>
 
           <p>
-            A rigorous research portfolio comprising <strong>6 published papers</strong> (with 33+ total citations), <strong>2 accepted papers</strong> (including Elsevier Array and RIACT 2026), <strong>4 submitted manuscripts</strong> under peer review, and <strong>3 active drafts/capstone projects</strong>.
+            A rigorous research portfolio comprising <strong>6 published papers</strong> (with 33+ total citations & high impact factors up to <strong>9.4</strong>), <strong>3 accepted papers</strong> (including Elsevier Array, RIACT 2026, and IEEE Keystroke Dynamics), <strong>3 under review manuscripts</strong>, and <strong>3 active research drafts</strong>.
           </p>
         </div>
 
@@ -111,15 +112,44 @@ export default function Publications() {
               <div className="pub-card-body">
                 <h3 className="pub-title">{pub.title}</h3>
 
-                <div className="pub-venue">
-                  <strong>{pub.venue}</strong>
-                  {pub.publisher && <span> · {pub.publisher}</span>}
+                <div className="pub-venue-group">
+                  <div className="pub-venue">
+                    <strong>{pub.venue}</strong>
+                    {pub.publisher && <span> · {pub.publisher}</span>}
+                  </div>
+
+                  {/* Impact Factor Badge in bright gradient color */}
+                  {pub.impactFactor && (
+                    <div className="pub-impact-badge" title="Journal Impact Factor">
+                      <Flame size={13} className="text-amber" />
+                      <span>Impact Factor: <strong>{pub.impactFactor}</strong></span>
+                    </div>
+                  )}
                 </div>
 
+                {pub.supervision && (
+                  <div className="pub-supervision-note">
+                    <span>{pub.supervision}</span>
+                  </div>
+                )}
+
                 {pub.collaboration && (
-                  <div className="pub-collaboration">
-                    <Globe size={14} />
-                    <span>{pub.collaboration}</span>
+                  <div className="pub-collaboration-row">
+                    <div className="pub-collaboration">
+                      <Globe size={14} />
+                      <span>{pub.collaboration}</span>
+                    </div>
+
+                    {/* Render larger partner university logos */}
+                    {pub.collabLogos && pub.collabLogos.length > 0 && (
+                      <div className="pub-partner-logos">
+                        {pub.collabLogos.map((logo, idx) => (
+                          <div key={idx} className="pub-partner-logo-box" title={logo.name}>
+                            <Image src={logo.path} alt={logo.name} width={44} height={44} className="pub-partner-logo-img" />
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
 
