@@ -19,7 +19,7 @@ export default function Profile() {
           </div>
 
           <p>
-            Computer Science & Engineering undergraduate specializing in Artificial Intelligence and Machine Learning at VIT Chennai. Driven by rigorous mathematical modeling, empirical benchmark evaluation, and robust systems engineering.
+            Computer Science & Engineering undergraduate specializing in Artificial Intelligence and Machine Learning at Vellore Institute of Technology. Driven by rigorous mathematical modeling, empirical benchmark evaluation, and robust systems engineering.
           </p>
         </div>
 
@@ -27,7 +27,7 @@ export default function Profile() {
         <div className="collab-stats-banner">
           <div className="collab-stat-item">
             <span className="collab-num">{personalInfo.cgpa}</span>
-            <span className="collab-label">CGPA @ VIT Chennai</span>
+            <span className="collab-label">CGPA @ Vellore Institute of Technology</span>
           </div>
 
           <div className="collab-stat-item">

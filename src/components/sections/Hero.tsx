@@ -29,7 +29,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero-description">
-            B.Tech CSE (AI & ML) student at <strong>VIT Chennai</strong> (CGPA: <strong>8.80</strong>) with <strong>3+ years of active research</strong>. Innovating at the nexus of multimodal data fusion, speech emotion recognition, explainable AI, and edge IoT intelligent systems.
+            B.Tech CSE (AI & ML) student at <strong>Vellore Institute of Technology</strong> (CGPA: <strong>8.80</strong>) with <strong>3+ years of active research</strong>. Innovating at the nexus of multimodal data fusion, speech emotion recognition, explainable AI, and edge IoT intelligent systems.
           </p>
 
           <div className="hero-actions">
@@ -73,11 +73,11 @@ export default function Hero() {
           <div className="hero-quick-stats">
             <div className="stat-card">
               <span className="stat-val">8.80</span>
-              <span className="stat-lbl">CGPA @ VIT Chennai</span>
+              <span className="stat-lbl">CGPA @ Vellore Institute of Technology</span>
             </div>
 
             <div className="stat-card">
-              <span className="stat-val">6 + 3</span>
+              <span className="stat-val">7 + 2</span>
               <span className="stat-lbl">Published + Accepted Papers</span>
             </div>
 

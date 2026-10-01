@@ -11,7 +11,7 @@ export default function Footer() {
             <span className="footer-name">Gokul Ram Kannan</span>
           </div>
           <span className="footer-subtitle">
-            B.Tech CSE (AI & ML) @ VIT Chennai (CGPA: 8.80) · AI/ML Researcher
+            B.Tech CSE (AI & ML) @ Vellore Institute of Technology (CGPA: 8.80) · AI/ML Researcher
           </span>
         </div>
 

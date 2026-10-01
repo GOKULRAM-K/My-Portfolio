@@ -20,7 +20,7 @@ export default function OpenSource() {
               </h2>
 
               <p>
-                During <strong>GirlScript Summer of Code (GSSoC) 2026</strong>, achieved <strong>Rank #80 globally</strong> among 43,587 international contributors and <strong>2nd at VIT Chennai</strong>. Merged <strong>179 Pull Requests</strong> across 7 open-source repositories spanning production AI agents, RAG pipelines, Next.js, Python, FastAPI, and server action security validation.
+                During <strong>GirlScript Summer of Code (GSSoC) 2026</strong>, achieved <strong>Rank #80 globally</strong> among 43,587 international contributors and <strong>2nd at Vellore Institute of Technology</strong>. Merged <strong>179 Pull Requests</strong> across 7 open-source repositories spanning production AI agents, RAG pipelines, Next.js, Python, FastAPI, and server action security validation.
               </p>
 
               <div className="opensource-actions">
@@ -89,7 +89,7 @@ export default function OpenSource() {
             <div className="stat-box">
               <Star size={20} className="text-cyan" />
               <strong>Top 1%</strong>
-              <span>2nd @ VIT Chennai</span>
+              <span>2nd @ Vellore Institute of Technology</span>
             </div>
 
             <div className="stat-box">

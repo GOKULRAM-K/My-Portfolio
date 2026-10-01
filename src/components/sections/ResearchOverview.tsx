@@ -35,7 +35,7 @@ const researchAreas = [
     title: "Multimodal Learning & Fusion",
     description:
       "Synthesizing heterogeneous data sources (ECG + EDA, audio + text, spatial floor-plans) with compatibility reasoning and latent state discovery.",
-    highlights: ["Elsevier Array Accepted", "Taylor's Univ International Collab", "ECG+EDA Biosignals"],
+    highlights: ["Elsevier Array Published", "Taylor's Univ International Collab", "ECG+EDA Biosignals"],
   },
   {
     icon: Eye,

@@ -34,7 +34,7 @@ export default function UpcomingWork() {
             </h3>
 
             <div className="upcoming-advisor">
-              <strong>Supervised by:</strong> Dr. Vignesh U (Associate Professor, SCOPE, VIT Chennai)
+              <strong>Supervised by:</strong> Dr. Vignesh U (Associate Professor, SCOPE, Vellore Institute of Technology)
             </div>
 
             <p className="upcoming-description">
@@ -53,7 +53,7 @@ export default function UpcomingWork() {
           <div className="upcoming-card dataset">
             <div className="upcoming-card-header">
               <span className="upcoming-badge dataset"><Database size={13} /> Institutional Dataset Initiative</span>
-              <span className="upcoming-time">CNI VIT Chennai</span>
+              <span className="upcoming-time">CNI Vellore Institute of Technology</span>
             </div>
 
             <h3 className="upcoming-title">
@@ -61,7 +61,7 @@ export default function UpcomingWork() {
             </h3>
 
             <div className="upcoming-advisor">
-              <strong>Under guidance of:</strong> Dr. Sridevi S (Associate Professor, Centre for Neuroinformatics, VIT Chennai)
+              <strong>Under guidance of:</strong> Dr. Sridevi S (Associate Professor, Centre for Neuroinformatics, Vellore Institute of Technology)
             </div>
 
             <p className="upcoming-description">
@@ -90,7 +90,7 @@ export default function UpcomingWork() {
               </li>
               <li>
                 <strong>Cognitive Grammar Learning for Workload Assessment</strong>
-                <span className="text-cyan">Under guidance of Dr. Sridevi S (Centre for Neuroinformatics, VIT Chennai)</span>
+                <span className="text-cyan">Under guidance of Dr. Sridevi S (Centre for Neuroinformatics, Vellore Institute of Technology)</span>
               </li>
             </ul>
 

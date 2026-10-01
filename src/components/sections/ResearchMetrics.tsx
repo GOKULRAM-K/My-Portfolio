@@ -5,7 +5,7 @@ import { personalInfo } from "@/data/portfolioData";
 const metrics = [
   {
     value: "8.80",
-    label: "CGPA @ VIT Chennai",
+    label: "CGPA @ Vellore Institute of Technology",
     detail: "B.Tech CSE (AI & Machine Learning)",
   },
   {
@@ -20,7 +20,7 @@ const metrics = [
   },
   {
     value: "9",
-    label: "Total Papers (3 Acc.)",
+    label: "Total Papers (2 Acc.)",
     detail: "Results in Eng, IEEE, Elsevier Array, RIACT",
   },
   {

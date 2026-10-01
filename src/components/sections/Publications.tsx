@@ -9,8 +9,8 @@ type StatusFilter = "ALL" | "PUBLISHED" | "ACCEPTED" | "UNDER_REVIEW" | "IN_DEVE
 
 const filterOptions: { label: string; value: StatusFilter; count: number }[] = [
   { label: "All Papers", value: "ALL", count: 15 },
-  { label: "Published", value: "PUBLISHED", count: 6 },
-  { label: "Accepted", value: "ACCEPTED", count: 3 },
+  { label: "Published", value: "PUBLISHED", count: 7 },
+  { label: "Accepted", value: "ACCEPTED", count: 2 },
   { label: "Under Review", value: "UNDER_REVIEW", count: 3 },
   { label: "In Pipeline / Draft", value: "IN_DEVELOPMENT", count: 3 },
 ];
@@ -59,7 +59,7 @@ export default function Publications() {
           </div>
 
           <p>
-            A rigorous research portfolio comprising <strong>6 published papers</strong> (with 33+ total citations & high impact factors up to <strong>9.4</strong>), <strong>3 accepted papers</strong> (including Elsevier Array, RIACT 2026, and IEEE Keystroke Dynamics), <strong>3 under review manuscripts</strong>, and <strong>3 active research drafts</strong>.
+            A rigorous research portfolio comprising <strong>7 published papers</strong> (with 33+ total citations & high impact factors up to <strong>9.4</strong>), <strong>2 accepted papers</strong> (including RIACT 2026 and IEEE Keystroke Dynamics), <strong>3 under review manuscripts</strong>, and <strong>3 active research drafts</strong>.
           </p>
         </div>
 

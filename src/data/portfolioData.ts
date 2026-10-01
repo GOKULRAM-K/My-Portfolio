@@ -28,7 +28,7 @@ export const personalInfo: PersonalInfo = {
   title: "AI/ML Researcher & Engineer",
   role: "Undergraduate Researcher (B.Tech CSE - AI & ML)",
   tagline: "Researching intelligent systems that learn, align, and explain.",
-  institution: "Vellore Institute of Technology (VIT), Chennai",
+  institution: "Vellore Institute of Technology",
   degree: "B.Tech in Computer Science & Engineering (Spec. in AI & ML)",
   cgpa: "8.80",
   researchYears: "3+ Years",
@@ -70,7 +70,7 @@ export interface Publication {
 }
 
 export const publications: Publication[] = [
-  // Published Papers (6)
+  // Published Papers (7)
   {
     id: "pub-01",
     title: "Ensemble deep learning model for protein secondary structure prediction using NLP metrics and explainable AI",
@@ -86,6 +86,20 @@ export const publications: Publication[] = [
     area: "Bioinformatics · Deep Learning · XAI · NLP",
     description: "An ensemble deep-learning architecture for protein secondary structure prediction incorporating NLP-inspired sequence metrics and gradient-based explainable AI.",
     highlights: ["IF: 9.4 (Elsevier)", "25+ Google Scholar Citations", "NLP Metrics Integration"],
+  },
+  {
+    id: "pub-07",
+    title: "An explainable multimodal data fusion framework for compatibility reasoning in heterogeneous decision systems",
+    status: "PUBLISHED",
+    type: "Journal",
+    year: "2026",
+    venue: "Array",
+    publisher: "Elsevier",
+    impactFactor: "5.3",
+    area: "Multimodal Learning · Data Fusion · Heterogeneous Reasoning · XAI",
+    description: "A framework for compatibility reasoning across non-homogeneous decision modalities, introducing derived feature spaces and interpretable score decomposition.",
+    collaboration: "International Collaboration with Prof. Abdulkareem Sh. Mahdi Al-Obaidi (Taylor's University, Malaysia)",
+    highlights: ["IF: 5.3 (Elsevier)", "International Collaboration (Malaysia)", "Published 2026"],
   },
   {
     id: "pub-02",
@@ -157,21 +171,7 @@ export const publications: Publication[] = [
     highlights: ["IEEE Xplore Indexed", "Cloud Systems Optimization"],
   },
 
-  // Accepted Papers (3)
-  {
-    id: "pub-07",
-    title: "An explainable multimodal data fusion framework for compatibility reasoning in heterogeneous decision systems",
-    status: "ACCEPTED",
-    type: "Journal",
-    year: "2026",
-    venue: "Array (Accepted Sept 18, 2026)",
-    publisher: "Elsevier",
-    impactFactor: "5.3",
-    area: "Multimodal Learning · Data Fusion · Heterogeneous Reasoning · XAI",
-    description: "A framework for compatibility reasoning across non-homogeneous decision modalities, introducing derived feature spaces and interpretable score decomposition.",
-    collaboration: "International Collaboration with Prof. Abdulkareem Sh. Mahdi Al-Obaidi (Taylor's University, Malaysia)",
-    highlights: ["IF: 5.3 (Elsevier)", "International Collaboration (Malaysia)", "Accepted Sept 2026"],
-  },
+  // Accepted Papers (2)
   {
     id: "pub-08",
     title: "Multi-Corpus Speech Emotion Recognition Framework with Cross-Corpus Generalization and Noise Robustness",
@@ -245,7 +245,7 @@ export const publications: Publication[] = [
     type: "Manuscript",
     year: "2026",
     venue: "Manuscript in Preparation",
-    supervision: "Supervised by Dr. Parvathi R (Centre for Advanced Data Science, VIT Chennai) & Dr. Vignesh U (SCOPE, VIT Chennai)",
+    supervision: "Supervised by Dr. Parvathi R (Centre for Advanced Data Science, Vellore Institute of Technology) & Dr. Vignesh U (SCOPE, Vellore Institute of Technology)",
     area: "Computational Biology · Microbial Pattern Clustering · Sequence Mining",
     description: "Algorithmic framework designed for fast pattern discovery and cluster isolation across massive microbial genomic sequence repositories.",
     highlights: ["Drafting Stage", "Supervised by Dr. Parvathi R & Dr. Vignesh U"],
@@ -257,7 +257,7 @@ export const publications: Publication[] = [
     type: "Manuscript",
     year: "2026",
     venue: "Manuscript in Preparation",
-    supervision: "Under guidance of Dr. Sridevi S (Centre for Neuroinformatics, VIT Chennai)",
+    supervision: "Under guidance of Dr. Sridevi S (Centre for Neuroinformatics, Vellore Institute of Technology)",
     area: "Neuroinformatics · Physiological Signal Processing · Grammatical Learning",
     description: "Converts multimodal ECG and EDA streams into a 5-state symbolic vocabulary via GMM/BIC to induce formal cognitive grammars via BiGRU sequence models.",
     highlights: ["CNI Research Project", "Guided by Dr. Sridevi S"],
@@ -269,7 +269,7 @@ export const publications: Publication[] = [
     type: "Manuscript",
     year: "2026",
     venue: "B.Tech Capstone Project",
-    supervision: "Supervised by Dr. Vignesh U (Associate Professor, SCOPE, VIT Chennai)",
+    supervision: "Supervised by Dr. Vignesh U (Associate Professor, SCOPE, Vellore Institute of Technology)",
     isCapstone: true,
     area: "Disentangled Representation Learning · Speech Emotion Recognition · VAEs",
     description: "Hierarchical neural architecture decoupling emotion features from speaker traits and acoustic background noise using orthogonal latent spaces and adversarial gradient reversal.",
@@ -453,13 +453,13 @@ export const researchExperiences: InternshipExperience[] = [
   {
     id: "res-01",
     role: "Research Engineer Intern",
-    company: "Centre for Neuroinformatics (CNI), VIT Chennai",
+    company: "Centre for Neuroinformatics (CNI), Vellore Institute of Technology",
     location: "CNI – QNeuro – SUNY Binghamton Program",
     period: "May 2026 – Jul 2026",
     category: "RESEARCH",
     logos: [
       { name: "SUNY Binghamton", path: "/assets/images/logos/binghamon-university-logo.png" },
-      { name: "VIT Chennai", path: "/assets/images/logos/vitchennai_logo.jpg" },
+      { name: "Vellore Institute of Technology", path: "/assets/images/logos/vitchennai_logo.jpg" },
       { name: "QNeuro", path: "/assets/images/logos/qneuro_logo.jpg" },
     ],
     highlights: [
@@ -472,20 +472,19 @@ export const researchExperiences: InternshipExperience[] = [
   {
     id: "res-02",
     role: "Research Intern",
-    company: "School of Computer Science & Engineering (SCOPE), VIT Chennai",
-    location: "SCOPE, VIT Chennai",
+    company: "School of Computer Science and Engineering, VIT",
+    location: "SCOPE, Vellore Institute of Technology (Hybrid)",
     period: "May 2025 – Jul 2025",
     category: "RESEARCH",
     logos: [
-      { name: "VIT Chennai", path: "/assets/images/logos/vitchennai_logo.jpg" },
+      { name: "Vellore Institute of Technology", path: "/assets/images/logos/vitchennai_logo.jpg" },
     ],
     highlights: [
-      "Developed a multi-corpus Speech Emotion Recognition framework harmonizing utterances across RAVDESS, CREMA-D, TESS, and SAVEE, expanding training to 48,648 samples via noise and pitch augmentation.",
-      "Engineered a lightweight 1D-CNN with 7.19M parameters over MFCC, ZCR, and RMSE feature spaces, achieving 98.03% accuracy / 0.980 Macro-F1 with Leave-One-Dataset-Out (LODO) transfer evaluation.",
-      "Demonstrated cross-corpus generalization via ablation analysis: transfer learning improved performance by +5.05 pp (p < 0.001), while BatchNorm removal led to a 79.84 pp drop.",
-      "Paper accepted at the 5th International Conference on Robotics, Intelligent Automation, and Control Technologies (RIACT 2026).",
+      "Developed HEDER-Net, a hierarchical speech-emotion disentanglement framework using frozen emotion2vec+ representations, separating stable/dynamic emotion and speaker/content nuisance.",
+      "Engineered temporal attention, Bi-LSTM, temporal-difference modeling, cross-level agreement, VAE-style purification, prototype learning, GRL adversaries, orthogonal disentanglement, and cross-reconstruction under an 8-component multi-task loss.",
+      "Evaluated 8,498 utterances / 115 speakers with speaker-disjoint and cross-dataset protocols; achieved 0.8927 Macro-F1, 0.0112 speaker Macro-F1, and 0.4427 cross-dataset Macro-F1, with ablations confirming core architectural contributions.",
     ],
-    techStack: ["Speech Audio", "1D-CNN", "MFCC / ZCR / RMSE", "Data Augmentation", "LODO Cross-Corpus Transfer", "PyTorch"],
+    techStack: ["HEDER-Net", "emotion2vec+", "Bi-LSTM", "VAE Disentanglement", "GRL Adversaries", "Speech Emotion Recognition", "PyTorch"],
   },
 ];
 
@@ -509,8 +508,8 @@ export const featuredProjects: ProjectHighlight[] = [
     title: "Next-Gen Irrigation: Leveraging Machine Learning for Precision Water Delivery at VIT",
     role: "Funded Field Project Lead",
     period: "Aug 2025 – Present",
-    organization: "VIT Chennai (On-Site Funded Field Project)",
-    summary: "Led a 14-member multidisciplinary team across 8 workstreams to deploy an end-to-end intelligent IoT & AI precision agriculture infrastructure at VIT Chennai campus.",
+    organization: "Vellore Institute of Technology (On-Site Funded Field Project)",
+    summary: "Led a 14-member multidisciplinary team across 8 workstreams to deploy an end-to-end intelligent IoT & AI precision agriculture infrastructure at Vellore Institute of Technology campus.",
     metrics: [
       "14 Multidisciplinary Team Members",
       "10 Raspberry Pi IoT Deployments",
@@ -530,7 +529,7 @@ export const featuredProjects: ProjectHighlight[] = [
     title: "Smart Phase Balancing & Hybrid IoT Power Distribution System",
     role: "Team Lead / Hardware Architect — SIH 2025 National Finalist",
     period: "SIH 2025 (KSEB Problem Statement 25064)",
-    organization: "Smart India Hackathon 2025 (Representing VIT Chennai)",
+    organization: "Smart India Hackathon 2025 (Representing Vellore Institute of Technology)",
     summary: "Selected among the Top 30 Hardware Teams nationwide out of 850+ campus entries to build an edge-driven autonomous power grid phase balancing system for KSEB.",
     metrics: [
       "Top 30 Hardware Teams in India",
@@ -552,7 +551,7 @@ export const featuredProjects: ProjectHighlight[] = [
     role: "Global Rank #80 Contributor (Top 1%)",
     period: "GSSoC 2026",
     organization: "GirlScript Foundation",
-    summary: "Ranked #80 globally out of 43,587 international contributors and 2nd at VIT Chennai, merging 179 PRs across 7 production AI & developer-tool repositories.",
+    summary: "Ranked #80 globally out of 43,587 international contributors and 2nd at Vellore Institute of Technology, merging 179 PRs across 7 production AI & developer-tool repositories.",
     metrics: [
       "Ranked #80 Globally",
       "Top 1% of 43,587 Contributors",
@@ -580,7 +579,7 @@ export interface Education {
 
 export const educationList: Education[] = [
   {
-    institution: "Vellore Institute of Technology (VIT), Chennai",
+    institution: "Vellore Institute of Technology",
     degree: "B.Tech in Computer Science and Engineering (Specialization in AI & ML)",
     period: "2023 — 2027",
     grade: "CGPA: 8.80 / 10.0",
@@ -590,7 +589,7 @@ export const educationList: Education[] = [
       "3+ years of active undergraduate research starting from Year 1.",
       "Collaborated with 9 professors, 4 seniors, and 3 batchmates across domestic & international projects.",
       "5 Published Indian Patents + 3 Patents under Legal Processing.",
-      "6 Published Papers + 3 Accepted Papers + 3 Under Review Papers + 3 In-Development Manuscripts.",
+      "7 Published Papers + 2 Accepted Papers + 3 Under Review Papers + 3 In-Development Manuscripts.",
       "Funded Field Project Lead (14 members) & SIH 2025 National Hardware Finalist (Top 30 Teams).",
     ],
   },

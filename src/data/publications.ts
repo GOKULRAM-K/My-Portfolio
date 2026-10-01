@@ -32,6 +32,18 @@ export const publications: Publication[] = [
       "An ensemble deep-learning approach for protein secondary structure prediction incorporating NLP-inspired evaluation metrics and explainability.",
   },
   {
+    id: "pub-06",
+    status: "PUBLISHED",
+    type: "Journal",
+    year: "2026",
+    title:
+      "An Explainable Multimodal Data Fusion Framework for Compatibility Reasoning in Heterogeneous Decision Systems",
+    venue: "Array",
+    area: "Multimodal Learning · Data Fusion · Explainable AI",
+    description:
+      "An explainable multimodal data-fusion framework for compatibility reasoning across heterogeneous decision systems.",
+  },
+  {
     id: "pub-02",
     status: "PUBLISHED",
     type: "Conference",
@@ -74,17 +86,5 @@ export const publications: Publication[] = [
     area: "Edge Computing · Robotics · Disaster Response",
     description:
       "Research exploring edge and network processing for resource management in disaster-response insect robot swarms.",
-  },
-  {
-    id: "pub-06",
-    status: "ACCEPTED",
-    type: "Journal",
-    year: "2026",
-    title:
-      "An Explainable Multimodal Data Fusion Framework for Compatibility Reasoning in Heterogeneous Decision Systems",
-    venue: "Array",
-    area: "Multimodal Learning · Data Fusion · Explainable AI",
-    description:
-      "An explainable multimodal data-fusion framework for compatibility reasoning across heterogeneous decision systems.",
   },
 ];
